@@ -51,7 +51,7 @@ b24Bot.on("command", function (req: any) {
     logger.trace("command: " + req.body.event + "\n");
 });
 
-function queryProcessor(req: any, res: any) {
+function queryHandler(req: any, res: any) {
     b24Bot.onBitrix24(req);
 }
 
@@ -66,7 +66,7 @@ let app_ssl = express.createServer(options);
 app_ssl.use( bodyParser() );
 app_ssl.all("/", function (req: any, res: any) {
     logger.trace("HTTPS request");
-    queryProcessor(req, res);
+    queryHandler(req, res);
 });
 app_ssl.listen(port_ssl);
 
@@ -76,6 +76,6 @@ let app = express.createServer();
 app.use( bodyParser() );
 app.all("/", function (req: any, res: any) {
     logger.trace("HTTP request");
-    queryProcessor(req, res);
+    queryHandler(req, res);
 });
 app.listen(port);
