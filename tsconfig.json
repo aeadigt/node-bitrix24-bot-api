@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "outDir": "built"
+    },
+    "files": [
+        "typings/tsd.d.ts",
+        "src/B24Bot.ts",
+        "src/index.ts"
+    ]
+}
